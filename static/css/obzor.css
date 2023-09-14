@@ -1,0 +1,2 @@
+.card-2 { border-radius: 18px; background: #fff; position: absolute; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%); box-shadow: 8px 0px 20px #d1d1d1; }
+.buybtn:{ cursor: pointer; background: #4787e9; color: #fff; transform: scale(0.95); }

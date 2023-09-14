@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="colorform" style="width: 800px;display: block;
+    margin-left: auto;
+    margin-right: auto;
+margin-bottom: 50px;">{{title}}</h1>
+<form action="" method=post enctype=multipart/form-data style="width: 800px; height: 1300px; display: block;
+    margin-left: auto;
+    margin-right: auto;">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.data_rozdeniya.label }}<br>
+        {{ form.data_rozdeniya(class="form-control") }}<br>
+        {% for error in form.data_rozdeniya.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    </p>
+    <p>
+        {{ form.semeynoe_polozhenie.label }}<br>
+        {{ form.semeynoe_polozhenie(class="form-control") }}<br>
+        {% for error in form.semeynoe_polozhenie.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    </p>
+    <p>
+        {{ form.adress.label }}<br>
+        {{ form.adress(class="form-control") }}<br>
+        {% for error in form.adress.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    </p>
+    <p>
+        {{ form.job.label }}<br>
+        {{ form.job(class="form-control") }}<br>
+        {% for error in form.job.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    </p>
+    <p>
+        {{ form.obrazovanie.label }}<br>
+        {{ form.obrazovanie(class="form-control") }}<br>
+        {% for error in form.obrazovanie.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    </p>
+    <p>
+        {{ form.dop_obrazovanie.label }}<br>
+        {{ form.dop_obrazovanie(class="form-control") }}<br>
+        {% for error in form.obrazovanie.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    </p>
+    <p>
+        {{ form.experience.label }}<br>
+        {{ form.experience(class="form-control") }}<br>
+        {% for error in form.experience.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    </p>
+    <p>
+        {{ form.dop_infa.label }}<br>
+        {{ form.dop_infa(class="form-control") }}<br>
+        {% for error in form.dop_infa.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    </p>
+    <p>
+        {{ form.url_on_files.label }}<br>
+        {{ form.url_on_files(class="form-control") }}<br>
+        {% for error in form.url_on_files.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    </p>
+    <p>{{ form.submit(type="submit", href="buy-courses",class="enter", style="background-color:#db3a34; width: 300px;") }}</p>
+    {{message}}
+</form>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/obzor.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}

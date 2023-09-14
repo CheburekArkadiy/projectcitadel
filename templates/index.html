@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hello mir</title>
+
+    <link rel="stylesheet" href="static/css/main.css">
+
+    <script src="static/libs/gsap/gsap.min.js" defer></script>
+    <script src="static/libs/gsap/ScrollTrigger.min.js" defer></script>
+    <script src="static/libs/gsap/ScrollSmoother.min.js" defer></script>
+
+    <script src="static/js/app.js" defer></script>
+</head>
+<body>
+<div class="wrapper">
+    <div class="content">
+
+        <header class="main-header">
+            <div class="layers">
+                <div class="layer__header">
+                    <div class="layers__caption" style="margin-bottom: 550px; font-size: 36px;">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀Искал хорошие курсы?
+                    </div>
+                    <div class="layers__title" style="margin-bottom: 250px;"></div>
+                </div>
+                <div class="layer layers__base" style="background-image: url(static/img/layer-base.png);"></div>
+                <div class="layer layers__middle" style="background-image: url(static/img/layer-middle.png);"></div>
+                <div class="layer layers__front" style="background-image: url(static/img/layer-front.png);"></div>
+            </div>
+        </header>
+
+        <article class="main-article" style="background-image: url(static/img/podval.jpg);">
+            <div class="main-article__content">
+                <h2 class="main-article__header" style="color:black;">Курсы от Профессионалов</h2>
+                <p class="main-article__paragraph" style="color:black;">Наши Преподаватели имеют огромный опыт, и гарантируют только положительные эмоции после прохождения их курсов!
+                   </p>
+                {% if current_user.is_authenticated %}
+                <div class="button">
+                    <form action="/buy-courses">
+                        <button>Купить курс</button>
+                    </form>
+                </div>
+                {% else %}
+                <div class="button">
+                    <form action="/register">
+                        <button>Купить курс</button>
+                    </form>
+                </div>
+                {% endif %}
+            </div>
+            <div class="copy">© HelloMir Production</div>
+        </article>
+
+    </div>
+</div>
+</body>
+</html>

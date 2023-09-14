@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+     <title>Project: Citadel</title>
+        <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,500,600,700,800,900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/themify-icons.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/slicknav.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/logo.ico') }}" type="image/x-icon">
+</head>
+<style>
+    .logo{
+    transition: transform .2s;
+    }
+    .logo:hover{
+    transform: scale(0.99);
+    }
+    @media (orientation: portrait) {
+    progress {
+      height: 5% !important;
+      width: 90%;
+      margin-top: 50%;
+    }
+    .footer-section {
+    margin-top: 50%;
+    }
+  }
+</style>
+<body>
+<header class="header-section">
+  <div class="container" style="display: inline-block;">
+    <div class="row">
+          <div class="" style="display: flex; justify-content: space-between;">
+              <div class="logo">
+                    <a href="/mainpage">
+                        <img width="20%" src="{{url_for('static', filename='img/logo2.png') }}" alt="">
+                    </a>
+                </div>
+            <div class="" style="display: block;">
+                <div class="main-menu mobile-menu">
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/contacts" >Контакты</a></li>
+                        {% if current_user.is_authenticated %}
+                        <li><a href="/profile" >Профиль</a></li>
+                        <li><a href="/logout">Выйти</a></li>
+                        {% else %}
+                        <li><a href="/login">Войти</a></li>
+                        <li><a href="/registration">Зарегистрироваться</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </div>
+        </div>
+</header>
+{% block content %}{% endblock %}
+<section class="footer-section" style="position: flexible; bottom: 0; left: 0; min-width: 100%">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 col-xs-2">
+                <div class="footer-option">
+                    <div class="fo-logo">
+                        <a href="#">
+                            <img src="static/img/logo2.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 col-xs-5">
+                <div class="footer-widget fw-links">
+                    <h5>О нас</h5>
+                    <ul>
+                        <li><a href="#">Адрес: Ульяновск, улица Пушкина, дом Колотушкина</a></li>
+                        <li><a href="#">Телефон: +7 999-999-99-99</a></li>
+                        <li><a href="#">Электронная почта: teachfind@mail.ru</a></li>
+                        <li><a href="/contacts">Контакты</a></li>
+                        <li><a href="https://dialogs.yandex.ru/store/skills/81fa072d-novyj-navyk">Наша игра с Хаккатона
+                            :)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+</body>
+<script
+      src="{{ url_for('static', filename='js/gsap.min.js') }}"
+      defer
+    ></script>
+    <script
+      src="{{ url_for('static', filename='js/ScrollTrigger.min.js') }}"
+      defer
+    ></script>
+    <script
+      src="{{ url_for('static', filename='js/ScrollSmoother.min.js') }}"
+      defer
+    ></script>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/buttons.css') }}"
+      type="text/css"
+    />
+</html>

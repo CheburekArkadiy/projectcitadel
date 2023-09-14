@@ -1,0 +1,35 @@
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  display: flex;
+  width: 400px;
+  color: white;
+  height: 400px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 150px;
+  padding: 10px;
+  border-radius: 20px;
+  transition: transform 0.2s;
+}
+
+.button:hover {
+  transform: scale(1.01);
+  color: white;
+}
+
+.button img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.button-text {
+  margin-top: 30px;
+  font-size: 2em;
+  font-weight: bold;
+}
